@@ -54,6 +54,7 @@ var Engine = (function(global) {
         lastTime = now;
 
         /* Use the browser's requestAnimationFrame function to call this
+
          * function again as soon as the browser is able to draw another frame.
          */
         win.requestAnimationFrame(main);
@@ -80,7 +81,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -158,8 +159,9 @@ var Engine = (function(global) {
      * handle game reset states - maybe a new game menu or a game over screen
      * those sorts of things. It's only called once by the init() method.
      */
-    function reset() {
-        // noop
+    function reset(player) {
+        this.x=200;
+        this.y=450;
     }
 
     /* Go ahead and load all of the images we know we're going to need to
