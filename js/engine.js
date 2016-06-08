@@ -188,4 +188,9 @@ var Engine = (function(global) {
      * from within their app.js files.
      */
     global.ctx = ctx;
+
+    $('.button').on('click',function(){
+        console.log("reset clicked");
+        reset();
+    }); 
 })(this);

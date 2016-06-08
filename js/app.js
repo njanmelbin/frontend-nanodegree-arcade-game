@@ -65,7 +65,7 @@ Player.prototype.update = function(){
     if(this.y < 50){
             console.log("won");
             this.won=true;
-                
+
     }
     if(this.x<0){
         this.x=0;
@@ -211,4 +211,7 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 } );
- 
+$('.button').on('click',function(){
+    console.log("reset clicked");
+    reset();
+}); 
