@@ -28,14 +28,23 @@ Enemy.prototype.render = function() {
 };
 
 // checking collision with player and if collision occurs player is reset to 
-// starting position
-Enemy.prototype.collision = function(player){
+// starting position.
+//Further enemy overlapping also dealt 
+// TODO-enemy overlapping code
+Enemy.prototype.collision = function(){
     //console.log("inside collision");
     if(this.x + 50>= player.x && this.x<=player.x+50 && this.y<= player.y+ 50 && this.y + 50>= player.y){
         player.x=200;
         player.y=398;
-    }
+    }  
+    allEnemies.forEach(function(enemy){
+        //console.log("inside enemy overlap")
+        if(this.x+50>=enemy.x && this.x<=enemy.x+50 && this.y<=enemy.y+50 && this.y+50>enemy.y){
+            console.log("enemy collision");
+        }
+    });
 };
+
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
@@ -110,7 +119,7 @@ allEnemies.push(new Enemy(Xpos[randomX()],Ypos[randomY()],Rspeed[randomSpeed()])
 // checks for collision of player with each bug
 var checkCollisions = function(){
     allEnemies.forEach(function(enemy){
-        enemy.collision(player);
+        enemy.collision();
     });
 }
 console.table(allEnemies);
@@ -126,3 +135,4 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+ 
