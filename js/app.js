@@ -1,3 +1,7 @@
+//HTML to display score
+var scoreHTML='<h1 class="score">%data%</h1>';
+var fscoreHTML=scoreHTML.replace("%data%",0);
+$('.stats').prepend(fscoreHTML);
 // Enemies our player must  avoid
 var Enemy = function(x,y,speed) {
     // Variables applied to each of our instances go here,
@@ -87,6 +91,9 @@ Player.prototype.render = function(){
             ctx.drawImage(Resources.get(this.sprite1),col*101,0);
         }
     }
+    $('.score').remove();
+    fscoreHTML=scoreHTML.replace("%data%",this.score)
+    $('.stats').prepend(fscoreHTML);
 };
 
 Player.prototype.handleInput=function(keycode){
@@ -185,9 +192,13 @@ allEnemies.push(new Enemy(Xpos[randomX()],Ypos[randomY()],Rspeed[randomSpeed()])
 allEnemies.push(new Enemy(Xpos[randomX()],Ypos[randomY()],Rspeed[randomSpeed()]));
 
 // creating stars
-allStars.push(new Star(StarX[randomY()],StarY[randomY()]));
-allStars.push(new Star(StarX[randomY()],StarY[randomY()]));
-
+var createStars = function(){
+    allStars.push(new Star(StarX[randomY()],StarY[randomY()]));
+    allStars.push(new Star(StarX[randomY()],StarY[randomY()]));
+    allStars.push(new Star(StarX[randomY()],StarY[randomY()]));
+    allStars.push(new Star(StarX[randomY()],StarY[randomY()]));
+}
+createStars();
 
 // checks for collision of player with each bug
 var checkCollisions = function(){
@@ -211,7 +222,3 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 } );
-$('.button').on('click',function(){
-    console.log("reset clicked");
-    reset();
-}); 

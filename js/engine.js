@@ -164,8 +164,11 @@ var Engine = (function(global) {
      */
     function reset() {
                 player.x=200;
-                player.y=300;
+                player.y=400;
                 player.won= false;
+                player.score=0;
+                allStars=[];
+                createStars();
     }
 
     /* Go ahead and load all of the images we know we're going to need to
