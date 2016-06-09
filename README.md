@@ -4,6 +4,7 @@ This is a simple game built using javascript and html5 canvas.
 
 ##Install
 `git clone  'https://github.com/njanmelbin/frontend-nanodegree-arcade-game.git'`
+Run index.html in your browser.
 
 ##Usage
 * Use up,down ,left and right arrow keys to make the player move
