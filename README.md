@@ -1,6 +1,14 @@
 frontend-nanodegree-arcade-game
 ===============================
+This is a simple game built using javascript and html5 canvas.
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission.
+##Install
+`git clone  'https://github.com/njanmelbin/frontend-nanodegree-arcade-game.git'`
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+##Usage
+* Use up,down ,left and right arrow keys to make the player move
+* Reset the player by clicking the reset button
+* Score is displayed above the reset button
+
+##License
+This project is under open-source licence
